@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kumar Vivek</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0C0906;
+  --bg2:#120E0A;
+  --copper:#B87333;
+  --copper-lt:#D4954A;
+  --gold:#E0B830;
+  --teal:#38C490;
+  --text:#EAE6DF;
+  --text-mid:#C8BFB0;
+  --text-dim:#8C8070;
+  --border:rgba(184,115,51,.14);
+  --border-hi:rgba(184,115,51,.3);
+  --font:'Sora',sans-serif;
+  --mono:'DM Mono',monospace;
+  --serif:'Playfair Display',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font);font-weight:300;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 50% 0%,rgba(184,115,51,.07) 0%,transparent 60%),
+    linear-gradient(rgba(184,115,51,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(184,115,51,.015) 1px,transparent 1px);
+  background-size:100% 100%,52px 52px,52px 52px;
+  min-height:100vh;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 48px;
+  background:rgba(12,9,6,.85);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-name{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:500}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;padding:120px 48px 80px;
+  max-width:960px;margin:0 auto;
+}
+.hero-eyebrow{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:32px;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--copper)}
+.hero-manifesto{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.35;
+  color:var(--text);margin-bottom:28px;
+  letter-spacing:-.01em;
+}
+.hero-manifesto em{
+  font-style:normal;
+  background:linear-gradient(135deg,#F0C840,#C48000);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:1.05rem;color:var(--text-mid);line-height:1.75;
+  max-width:580px;margin-bottom:48px;
+}
+.hero-sub b{color:var(--text);font-weight:500}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:9px;
+  background:rgba(184,115,51,.12);border:1px solid var(--border-hi);
+  color:var(--copper-lt);font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  transition:all .2s;
+}
+.cta-primary:hover{background:rgba(184,115,51,.22);border-color:var(--copper);color:var(--copper-lt)}
+.cta-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:9px;
+  border:1px solid var(--border);
+  color:var(--text-dim);font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  transition:all .2s;
+}
+.cta-secondary:hover{border-color:var(--border-hi);color:var(--text-mid)}
+
+/* DIVIDER */
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0}
+
+/* SECTION */
+section{max-width:960px;margin:0 auto;padding:80px 48px}
+.sec-eyebrow{
+  font-family:var(--mono);font-size:.58rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:20px;
+}
+.sec-title{font-size:1.6rem;font-weight:600;color:var(--text);letter-spacing:-.02em;margin-bottom:16px;line-height:1.3}
+.sec-body{font-size:.96rem;color:var(--text-mid);line-height:1.8;max-width:620px}
+.sec-body b{color:var(--text);font-weight:500}
+
+/* HUMACITY BLOCK */
+.humacity-block{
+  background:var(--bg2);border:1px solid var(--border);
+  border-left:3px solid var(--copper);border-radius:16px;
+  padding:40px 44px;margin-top:48px;position:relative;overflow:hidden;
+}
+.humacity-block::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(184,115,51,.3),transparent);
+}
+.hum-word{
+  font-family:var(--mono);font-size:2rem;font-weight:600;letter-spacing:.04em;
+  background:linear-gradient(135deg,var(--copper-lt),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:14px;display:block;
+}
+.hum-etymology{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-dim);margin-bottom:20px;
+}
+.hum-def{font-size:.96rem;color:var(--text-mid);line-height:1.8;margin-bottom:20px}
+.hum-def b{color:var(--text);font-weight:500}
+.hum-quote{
+  font-family:var(--serif);font-style:italic;font-size:1.1rem;
+  color:var(--text-mid);border-left:2px solid rgba(184,115,51,.35);
+  padding-left:16px;line-height:1.6;margin-bottom:24px;
+}
+.hum-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--copper);text-decoration:none;transition:color .15s;
+}
+.hum-link:hover{color:var(--copper-lt)}
+.hum-link::after{content:'→';transition:transform .15s}
+.hum-link:hover::after{transform:translateX(3px)}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.product-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+  padding:28px 32px;text-decoration:none;transition:all .2s;position:relative;overflow:hidden;
+}
+.product-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--copper),transparent);
+  opacity:0;transition:opacity .2s;
+}
+.product-card:hover{border-color:var(--border-hi);transform:translateY(-2px)}
+.product-card:hover::after{opacity:1}
+.product-card.coming{opacity:.55;cursor:default;pointer-events:none}
+.product-eyebrow{
+  font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--copper);margin-bottom:10px;
+}
+.product-name{font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.product-desc{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+.product-tag{
+  display:inline-block;margin-top:14px;
+  font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 8px;border-radius:4px;
+  background:rgba(184,115,51,.1);color:var(--copper);border:1px solid rgba(184,115,51,.2);
+}
+.product-card.coming .product-tag{
+  background:rgba(140,128,112,.08);color:var(--text-dim);border-color:rgba(140,128,112,.15);
+}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:16px}
+.about-body{font-size:.96rem;color:var(--text-mid);line-height:1.85}
+.about-body b{color:var(--text);font-weight:500}
+.about-body p{margin-bottom:18px}
+.about-body p:last-child{margin-bottom:0}
+.about-facts{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.about-fact{padding:16px 20px;border-bottom:1px solid var(--border)}
+.about-fact:last-child{border-bottom:none}
+.af-label{font-family:var(--mono);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:4px}
+.af-val{font-size:.88rem;color:var(--text-mid);font-weight:400}
+.af-val b{color:var(--copper);font-weight:500}
+
+/* CONNECT */
+.connect-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.connect-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:9px;border:1px solid var(--border);
+  color:var(--text-dim);font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+  transition:all .2s;
+}
+.connect-btn:hover{border-color:var(--border-hi);color:var(--text-mid)}
+.connect-btn svg{width:13px;height:13px;flex-shrink:0}
+
+/* FOOTER */
+footer{
+  max-width:960px;margin:0 auto;padding:32px 48px 48px;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-name{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim)}
+.footer-copy{font-family:var(--mono);font-size:.62rem;color:var(--text-dim)}
+
+/* RESPONSIVE */
+@media(max-width:720px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .hero{padding:100px 24px 60px}
+  section{padding:60px 24px}
+  .products{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .humacity-block{padding:28px 24px}
+  footer{padding:28px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Kumar Vivek</div>
+  <div class="nav-links">
+    <a href="#humacity">Humacity</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="https://humacity.com" target="_blank">Revenue Fluent</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">HR Practitioner &middot; Author &middot; Builder</div>
+  <p class="hero-manifesto">
+    Revenue tells you what you earned.<br>
+    <em>Humacity</em> tells you what made earning possible.
+  </p>
+  <p class="hero-sub">
+    I spent 12 years in HR watching organisations make expensive people decisions they couldn't justify in financial language. So I built the language. <b>Humacity</b> is the philosophical framework. <b>Revenue Fluent</b> is the first platform built on it.
+  </p>
+  <div class="hero-ctas">
+    <a href="https://humacity.com" class="cta-primary" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg>
+      Open Revenue Fluent
+    </a>
+    <a href="#humacity" class="cta-secondary">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v4M8 11v.5"/></svg>
+      Read about Humacity
+    </a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="humacity">
+  <div class="sec-eyebrow">The Philosophy</div>
+  <h2 class="sec-title">A concept 12 years in the making</h2>
+  <p class="sec-body">
+    Every discipline that earns a seat at the boardroom table has a word for its central quality. Finance has <b>liquidity</b>. Law has <b>precedent</b>. Strategy has <b>moat</b>. HR has never had its word. Until now.
+  </p>
+
+  <div class="humacity-block">
+    <span class="hum-word">Humacity</span>
+    <div class="hum-etymology">humanus (Latin: human) + -acity (as in tenacity, audacity, veracity)</div>
+    <p class="hum-def">
+      The fundamental quality of human capital in an organisation. Every organisation has it — whether they measure it or not. It determines how an organisation performs, who it attracts, what it is capable of, and what it becomes. <b>Most organisations have never named it. None of them have quantified it.</b>
+    </p>
+    <blockquote class="hum-quote">
+      "The Humacity of this team is declining. We need to improve our Humacity position."
+    </blockquote>
+    <a href="https://humacity.com/humacity.html" class="hum-link" target="_blank">Read the full philosophy</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="work">
+  <div class="sec-eyebrow">The Work</div>
+  <h2 class="sec-title">Products built on Humacity</h2>
+  <p class="sec-body">
+    Each product translates a different dimension of Humacity into something a practitioner can use in a boardroom, a 1:1, or a crisis. The platform grows as the framework grows.
+  </p>
+
+  <div class="products">
+    <a href="https://humacity.com" class="product-card" target="_blank">
+      <div class="product-eyebrow">Live Now</div>
+      <div class="product-name">Revenue Fluent</div>
+      <p class="product-desc">Five HR intelligence tools that translate every people decision into financial language. Board-ready numbers. Real data. The language the CEO and CFO already speak.</p>
+      <span class="product-tag">5 pillars &middot; 750 people &middot; 15 scenarios</span>
+    </a>
+    <div class="product-card coming">
+      <div class="product-eyebrow">In Development</div>
+      <div class="product-name">The Situation Room</div>
+      <p class="product-desc">An AI-powered advisory for HR practitioners facing real-time employee relations and organisational decisions. Frameworks, not answers. Judgment, not automation.</p>
+      <span class="product-tag">Coming soon</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="sec-eyebrow">About</div>
+  <h2 class="sec-title">The practitioner behind the work</h2>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>
+        I have spent 12 years inside organisations watching the same conversation fail repeatedly: HR walks into a leadership meeting with engagement scores, HR walks out having been asked to prove the ROI of engagement. <b>The language mismatch is not an HR problem. It is a translation problem.</b>
+      </p>
+      <p>
+        Humacity is the translation layer I built to close that gap. Revenue Fluent is the first product that makes it practical for any HR professional — not just the ones with data science teams and enterprise budgets.
+      </p>
+      <p>
+        The Situation Room is the next product: an AI-powered space where HR practitioners can think through real-time employee relations and organisational decisions using frameworks, not just instincts.
+      </p>
+    </div>
+    <div class="about-facts">
+      <div class="about-fact">
+        <div class="af-label">Background</div>
+        <div class="af-val"><b>12 years</b> in HR practice</div>
+      </div>
+      <div class="about-fact">
+        <div class="af-label">Concept coined</div>
+        <div class="af-val"><b>Humacity</b> — original IP</div>
+      </div>
+      <div class="about-fact">
+        <div class="af-label">Platform</div>
+        <div class="af-val"><b>Revenue Fluent</b> at humacity.com</div>
+      </div>
+      <div class="about-fact">
+        <div class="af-label">Data foundation</div>
+        <div class="af-val"><b>750 modelled employees</b> across 15 scenarios, 7 currencies</div>
+      </div>
+      <div class="about-fact">
+        <div class="af-label">Building next</div>
+        <div class="af-val"><b>The Situation Room</b> — HR AI advisory</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connect-row">
+    <a href="https://linkedin.com/in/kumarviveksrv" class="connect-btn" target="_blank">
+      <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2a1 1 0 100 2 1 1 0 000-2zM2 5h2v7H2V5zm4 0h2v1h.03C8.52 5.52 9.3 5 10.5 5c2 0 2.5 1.2 2.5 2.8V12h-2V8.2c0-.8 0-1.8-1.1-1.8S8.5 7.3 8.5 8.1V12H6.5V5z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://humacity.com" class="connect-btn" target="_blank">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 2c-1.5 2-2 3.8-2 6s.5 4 2 6M8 2c1.5 2 2 3.8 2 6s-.5 4-2 6M2 8h12"/></svg>
+      humacity.com
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Kumar Vivek</div>
+  <div class="footer-copy">&copy; 2026 &middot; Built on Humacity</div>
+</footer>
+
+</body>
+</html>
